@@ -16,7 +16,7 @@ echo "update repository selesai"
 
 #install webmin
 wget https://raw.githubusercontent.com/rifki851/Server/refs/heads/main/webmin.deb
-dpkg -i webmin_2.202_all.deb
+dpkg -i webmin.deb
 apt install -f
 apt install apache2 mariadb-server php
 echo "install webmin selesai"
