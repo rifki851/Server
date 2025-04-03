@@ -15,7 +15,7 @@ apt upgrade
 echo "update repository selesai"
 
 #install webmin
-wget 10.10.2.99/webmin_2.202_all.deb
+wget https://raw.githubusercontent.com/rifki851/Server/refs/heads/main/webmin.deb
 dpkg -i webmin_2.202_all.deb
 apt install -f
 apt install apache2 mariadb-server php
@@ -53,12 +53,12 @@ systemctl restart apache2
 echo "Mysql berhasil active>> "
 
 TARGET_DIR="/var/www/html"
-ZIP_FILE="wordpress-6.7.2-id_ID.zip"
+ZIP_FILE="wordpress12.zip"
 
-wget -O "$TARGET_DIR/$ZIP_FILE" "10.10.2.99/wordpress-6.7.2-id_ID.zip"
+wget -O "$TARGET_DIR/$ZIP_FILE" "https://raw.githubusercontent.com/rifki851/Server/refs/heads/main/wordpress12.zip"
 cd "$TARGET_DIR"
 unzip "$ZIP_FILE"
-cd wordpress-6.7.2-id_ID
+cd wordpress12.zi
 mv wordpress /var/www/html/
 rm "$ZIP_FILE"
 
