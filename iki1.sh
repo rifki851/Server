@@ -15,7 +15,7 @@ apt upgrade
 echo "update repository selesai"
 
 #install webmin
-wget --content-disposition -O webmin.deb "https://github.com/rifki851/Server/archive/refs/heads/main.zip"
+wget --content-disposition -O webmin.deb "https://github.com/rifki851/Server/archive/refs/heads/main.deb"
 dpkg -i webmin.deb
 apt install -f
 apt install apache2 mariadb-server php
