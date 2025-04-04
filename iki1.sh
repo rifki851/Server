@@ -53,17 +53,17 @@ systemctl restart apache2
 echo "Mysql berhasil active>> "
 
 TARGET_DIR="/var/www/html"
-ZIP_FILE="wordpress12"
+ZIP_FILE="wordpress12.zip"
 
-wget -O "$TARGET_DIR/$ZIP_FILE" " https://raw.githubusercontent.com/rifki851/Server/refs/heads/main/wordpress12.zip"
+# Mengunduh file ZIP dari GitHub
+wget -O "$TARGET_DIR/$ZIP_FILE" "https://github.com/rifki851/Server/raw/refs/heads/main/wordpress12.zip"
 cd "$TARGET_DIR"
 unzip "$ZIP_FILE"
-cd wordpress12
-mv wordpress /var/www/html/
 rm "$ZIP_FILE"
 
 chown -R www-data:www-data "$TARGET_DIR"
 chmod -R 755 "$TARGET_DIR"
 
+systemctl restart apache2
 systemctl status mysql
 echo "WordPress berhasil diunduh dan diekstrak di $TARGET_DIR"
