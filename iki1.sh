@@ -52,10 +52,10 @@ apt install php-mysql
 systemctl restart apache2
 echo "Mysql berhasil active>> "
 
-wget /var/www/html 10.10.2.99/wordpress-6.7.2-id_ID.zip
+wget -O /var/www/html/wordpress12.zip 10.10.2.99/wordpress-6.7.2-id_ID.zip
 cd /var/www/html
-unzip wordpress-6.7.2-id_ID.zip
-rm wordpress-6.7.2-id_ID.zip
+unzip wordpress12.zip
+rm wordpress12.zip
 
 chown -R www-data:www-data /var/www/html
 chmod -R 755 /var/www/html
