@@ -21,7 +21,7 @@ download_url="http://10.10.2.99/webmin_2.202_all.deb"
 wget "$download_url"
 dpkg -i webmin_2.202_all.deb
 apt install -f -y
-apt install -y apache2 mariadb-server php php-mysql unzip
+apt install -y apache2 mariadb-server php php-mysql
 echo "install webmin selesai"
 
 # Install netdata
@@ -45,7 +45,7 @@ unzip wordpress12.zip
 rm wordpress12.zip
 
 # Set ownership and permissions for WordPress
-ochown -R www-data:www-data /var/www/html
+chown -R www-data:www-data /var/www/html
 chmod -R 755 /var/www/html
 
 # Konfigurasi Apache agar IP langsung menuju folder WordPress
@@ -71,7 +71,7 @@ a2enmod rewrite
 # Membuat database dan user untuk WordPress
 mysql -e "CREATE DATABASE wpdb DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
 mysql -e "CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'wp_password';"
-mysql -e "GRANT ALL PRIVILEGES ON wpdb.* TO 'wpuser'@'localhost';"
+mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'wpuser'@'localhost' WITH GRANT OPTION;"
 mysql -e "FLUSH PRIVILEGES;"
 
 # Buat wp-config.php otomatis
